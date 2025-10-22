@@ -1,45 +1,170 @@
-# Site settings
-title: "Nafis Fuad"
-name: "Nafis Fuad"
-email: "nafisfuad@wayne.edu"
-description: "PhD Researcher| Ai in Transportation | LLM Engineer | Data Science | Machine Learning"
-url: "https://nafis-saad.github.io"
-baseurl: ""
+# ===========================================================
+#   AcademicPages Configuration — customized for Nafis Fuad
+# ===========================================================
 
-# Build settings
+locale                   : "en-US"
+title                    : "Nafis Fuad"
+title_separator          : "-"
+name                     : &name "Nafis Fuad"
+description              : &description "Ph.D. Researcher | Data Science | Machine Learning"
+keywords                 : "data science, machine learning, research, academia, portfolio"
+url                      : "https://nafis-saad.github.io"   # main GitHub Pages URL
+baseurl                  : ""                               # no subpath
+repository               : "nafis-saad/nafis_fuad.github.io"
+teaser                   :
+breadcrumbs              : false
+words_per_minute         : 160
+future                   : true
+read_more                : "disabled"
+talkmap_link             : false
+
+# -----------------------------------------------------------
+# Comments (disabled for now)
+# -----------------------------------------------------------
+comments:
+  provider               : false
+
+# -----------------------------------------------------------
+# SEO + Social Verification
+# -----------------------------------------------------------
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+# -----------------------------------------------------------
+# Social Sharing
+# -----------------------------------------------------------
+twitter:
+  username               : &twitter nafis_fuad
+facebook:
+  username               :
+og_image                 :
+
+social:
+  type                   : Person
+  name                   : "Nafis Fuad"
+  links:
+    - "https://github.com/nafis-saad"
+    - "https://www.linkedin.com/in/nafis-fuad/"
+    - "https://scholar.google.com/"
+    - "mailto:nafis.fuad@example.com"
+
+# -----------------------------------------------------------
+# Analytics (optional)
+# -----------------------------------------------------------
+analytics:
+  provider               : false
+  google:
+    tracking_id          :
+
+# -----------------------------------------------------------
+# Site Author
+# -----------------------------------------------------------
+author:
+  name             : "Nafis Fuad"
+  avatar           : "profile.jpg"      # put your image in /images/
+  bio              : "Ph.D. Researcher | Data Science | Machine Learning | AI for Sustainability"
+  location         : "United States"
+  googlescholar    : "https://scholar.google.com/"
+  researchgate     :
+  email            : "nafis.fuad@example.com"
+  github           : "nafis-saad"
+  linkedin         : "nafis-fuad"
+  twitter          : "nafis_fuad"
+
+# -----------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  toc_levels: 1..6
+
+# -----------------------------------------------------------
+# Collections
+# -----------------------------------------------------------
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+
+# -----------------------------------------------------------
+# Defaults
+# -----------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# -----------------------------------------------------------
+# Sass / Theme / Plugins
+# -----------------------------------------------------------
+sass:
+  sass_dir: _sass
+  style: compressed
+
 theme: minimal-mistakes-jekyll
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
-markdown: kramdown
-permalink: pretty
-paginate: 5
-paginate_path: /page:num/
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
   - jekyll-seo-tag
+  - jemoji
 
-# Sidebar information
-author:
-  name   : "Nafis Fuad"
-  avatar : "/images/profile.jpg"
-  bio    : "Short biography for the left-hand sidebar"
-  location: "USA"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope"
-      url: "mailto:your_email@example.com"
-    - label: "Google Scholar"
-      icon: "ai ai-google-scholar"
-      url: "https://scholar.google.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/nafis-saad"
+# mimic GitHub Pages safe mode
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
 
-# Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/nafis-saad"
+# -----------------------------------------------------------
+# Archives
+# -----------------------------------------------------------
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# -----------------------------------------------------------
+# Output / Pagination
+# -----------------------------------------------------------
+permalink: /:categories/:title/
+timezone: America/New_York
+
+# -----------------------------------------------------------
+# HTML Compression
+# -----------------------------------------------------------
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
