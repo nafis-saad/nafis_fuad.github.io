@@ -1,15 +1,12 @@
-# ===========================================================
-#   AcademicPages Configuration — customized for Nafis Fuad
-# ===========================================================
-
+# Welcome to Jekyll!
+# Site Settings
 locale                   : "en-US"
 title                    : "Nafis Fuad"
 title_separator          : "-"
 name                     : &name "Nafis Fuad"
-description              : &description "Ph.D. Researcher | Data Science | Machine Learning"
-keywords                 : "data science, machine learning, research, academia, portfolio"
-url                      : "https://nafis-saad.github.io"   # main GitHub Pages URL
-baseurl                  : ""                               # no subpath
+description              : &description "Ph.D. Researcher in Civil & Transportation Engineering | LLMs, Geospatial Intelligence, Travel Demand Modeling"
+url                      : "https://nafis-saad.github.io"
+baseurl                  : ""
 repository               : "nafis-saad/nafis_fuad.github.io"
 teaser                   :
 breadcrumbs              : false
@@ -18,82 +15,100 @@ future                   : true
 read_more                : "disabled"
 talkmap_link             : false
 
-# -----------------------------------------------------------
-# Comments (disabled for now)
-# -----------------------------------------------------------
-comments:
-  provider               : false
-
-# -----------------------------------------------------------
-# SEO + Social Verification
-# -----------------------------------------------------------
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
-
-# -----------------------------------------------------------
-# Social Sharing
-# -----------------------------------------------------------
-twitter:
-  username               : &twitter nafis_fuad
-facebook:
-  username               :
-og_image                 :
-
-social:
-  type                   : Person
-  name                   : "Nafis Fuad"
-  links:
-    - "https://github.com/nafis-saad"
-    - "https://www.linkedin.com/in/nafis-fuad/"
-    - "https://scholar.google.com/"
-    - "mailto:nafis.fuad@example.com"
-
-# -----------------------------------------------------------
-# Analytics (optional)
-# -----------------------------------------------------------
-analytics:
-  provider               : false
-  google:
-    tracking_id          :
-
-# -----------------------------------------------------------
 # Site Author
-# -----------------------------------------------------------
 author:
+  avatar           : "profile.png"
   name             : "Nafis Fuad"
-  avatar           : "profile.jpg"      # put your image in /images/
-  bio              : "Ph.D. Researcher | Data Science | Machine Learning | AI for Sustainability"
-  location         : "United States"
-  googlescholar    : "https://scholar.google.com/"
-  researchgate     :
-  email            : "nafis.fuad@example.com"
-  github           : "nafis-saad"
-  linkedin         : "nafis-fuad"
-  twitter          : "nafis_fuad"
+  pronouns         :
+  bio              : "Ph.D. Student in Civil & Transportation Engineering at Wayne State University. Researching LLMs, Geospatial Intelligence, and Travel Demand Modeling."
+  location         : "Detroit, Michigan, USA"
+  employer         : "Wayne State University"
+  uri              :
+  email            : "nafis_fuad@wayne.edu"
 
-# -----------------------------------------------------------
-# Jekyll settings
-# -----------------------------------------------------------
+  # Academic websites
+  academia         :
+  arxiv            :
+  googlescholar    :
+  impactstory      :
+  orcid            :
+  semantic         :
+
+  # Repositories and software
+  bitbucket        :
+  codepen          :
+  dribbble         :
+  flickr           :
+  github           : "nafis-saad"
+  kaggle           :
+  linkedin         : "nafis-fuad-3893a3154"
+  mastodon         :
+  medium           :
+  researchgate     :
+  stackoverflow    :
+  twitter          :
+  youtube          :
+  wikipedia        :
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+keep_files:
+  - .git
+  - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
+# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
   toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
 
-# -----------------------------------------------------------
 # Collections
-# -----------------------------------------------------------
 collections:
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -101,10 +116,9 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# -----------------------------------------------------------
 # Defaults
-# -----------------------------------------------------------
 defaults:
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -112,58 +126,75 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: false
+      comments: true
       share: true
+      related: true
+  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
+  # _teaching
+  - scope:
+      path: ""
+      type: teaching
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      comment: true
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: true
+      share: true
 
-# -----------------------------------------------------------
-# Sass / Theme / Plugins
-# -----------------------------------------------------------
+# Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed
 
-theme: minimal-mistakes-jekyll
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jemoji
-
-# mimic GitHub Pages safe mode
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jemoji
-
-# -----------------------------------------------------------
-# Archives
-# -----------------------------------------------------------
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-# -----------------------------------------------------------
-# Output / Pagination
-# -----------------------------------------------------------
+# Outputting
 permalink: /:categories/:title/
-timezone: America/New_York
+timezone: America/Detroit
 
-# -----------------------------------------------------------
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jemoji
+
 # HTML Compression
-# -----------------------------------------------------------
 compress_html:
   clippings: all
   ignore:
